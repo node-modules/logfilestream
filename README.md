@@ -10,9 +10,7 @@ Log file stream, including auto rolling feature, support multiprocess `append` w
 ```js
 var writestream = logfilestream({
   logdir: '/tmp/logs',
-  prename: 'info.',
-  format: 'YYYY-MM-DD',
-  ext: '.log'
+  nameformat: '[info.]YYYY-MM-DD[.log]'
 });
 
 writestream.write('hello');

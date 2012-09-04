@@ -19,14 +19,13 @@ describe('lib/logstream.js', function () {
   
   describe('createStream()', function () {
     it('should init and call this first cut() to create a writestream', function () {
-      var stream = logstream({logdir: logdir, prename: 'info.'});
+      var stream = logstream({logdir: logdir});
       stream.duration.should.equal(3600000);
       stream.logdir.should.equal(logdir);
-      stream.format.should.equal('YYYY-MM-DD');
-      stream.ext.should.equal('.log');
+      stream.nameformat.should.equal('[info.]YYYY-MM-DD[.log]');
       stream.streamMode.should.equal('0666');
       stream.stream.path.should.equal(path.join(logdir,
-        'info.' + moment().format(stream.format) + '.log'));
+        'info.' + moment().format('YYYY-MM-DD') + '.log'));
       stream.should.have.property('_reopening', true);
       stream.end();
       stream.should.have.property('stream', null);
@@ -90,8 +89,7 @@ describe('lib/logstream.js', function () {
     it('should be cut when timeout', function (done) {
       var stream = logstream({
         duration: 1000,
-        format: 'YYYY-MM-DD hh:mm:ss',
-        prename: 'debug.',
+        nameformat: 'YYYY-MM-DDhh:mm:ss[.log]',
         logdir: logdir
       });
       var lastStream = stream.stream;
