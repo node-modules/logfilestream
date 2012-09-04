@@ -10,7 +10,7 @@ var existsSync = fs.existsSync || path.existsSync;
 
 var logdir = path.join(__dirname, 'logstream-test');
 
-describe('logstream', function () {
+describe('logfilestream', function () {
   before(function (done) {
     exec(['rm -rf ' + logdir], function () {
       mkdirp(logdir, done);

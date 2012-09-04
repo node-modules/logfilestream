@@ -1,7 +1,7 @@
 {
-  "name": "logstream",
+  "name": "logfilestream",
   "version": "0.0.1",
-  "description": "Log stream, including auto rolling feature, support multiprocess `append` write at the same time. ",
+  "description": "Log file stream, including auto rolling feature, support multiprocess `append` write at the same time. ",
   "main": "index.js",
   "scripts": {
     "test": "make test"
@@ -14,6 +14,9 @@
     "url": "https://github.com/fengmk2/logstream/issues"
   },
   "keywords": [
+    "logfile",
+    "logfilestream",
+    "logstream",
     "logging",
     "log",
     "stream",

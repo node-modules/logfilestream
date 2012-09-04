@@ -1,14 +1,14 @@
-logstream
+logfilestream
 =========
 
-Log stream, including auto rolling feature, support multiprocess `append` write at the same time.
+Log file stream, including auto rolling feature, support multiprocess `append` write at the same time.
 
 [![Build Status](https://secure.travis-ci.org/fengmk2/logstream.png)](http://travis-ci.org/fengmk2/logstream)
 
 ## Usage
 
 ```js
-var writestream = logstream({
+var writestream = logfilestream({
   logdir: '/tmp/logs',
   prename: 'info.',
   format: 'YYYY-MM-DD',
@@ -23,7 +23,7 @@ writestream.end();
 ### Install
 
 ```sh
-$ npm install logstream
+$ npm install logfilestream
 ```
 
 ## License 
