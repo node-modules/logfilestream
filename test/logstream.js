@@ -10,7 +10,7 @@ var existsSync = fs.existsSync || path.existsSync;
 
 var logdir = path.join(__dirname, 'logstream-test');
 
-describe('logfilestream', function () {
+describe('lib/logstream.js', function () {
   before(function (done) {
     exec(['rm -rf ' + logdir], function () {
       mkdirp(logdir, done);
@@ -65,7 +65,7 @@ describe('logfilestream', function () {
     });
   });
 
-  describe('startTimer', function () {
+  describe('startTimer()', function () {
     it('_timer should be change', function () {
       var stream = logstream({logdir: logdir});
       var oldtimer = stream._timer;
@@ -76,7 +76,7 @@ describe('logfilestream', function () {
     });
   });
 
-  describe('#cut', function () {
+  describe('cut()', function () {
     var old = logstream.LogStream.prototype.firstDuration;
     before(function () {
       logstream.LogStream.prototype.firstDuration = function () {
@@ -112,7 +112,8 @@ describe('logfilestream', function () {
         stream.write(line1);
         stream.write(line1);
         stream.end();
-        should.not.exist(stream._timer);
+        stream.should.have.property('_timer', null);
+        stream.should.have.property('stream', null);
       }, 1010);
     });
   });
