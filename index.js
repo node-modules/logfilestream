@@ -1,0 +1,1 @@
+module.exports = process.env.LOGSTREAM_COV ? require('./lib-cov/logstream') : require('./lib/logstream');
