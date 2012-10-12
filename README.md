@@ -1,9 +1,9 @@
-logfilestream
+logfilestream [![Build Status](https://secure.travis-ci.org/fengmk2/logstream.png)](http://travis-ci.org/fengmk2/logstream)
 =========
 
-Log file stream, including auto rolling feature, support multiprocess `append` write at the same time.
+![logo](https://raw.github.com/fengmk2/logfilestream/master/logo.png)
 
-[![Build Status](https://secure.travis-ci.org/fengmk2/logstream.png)](http://travis-ci.org/fengmk2/logstream)
+Log file stream, including auto rolling feature, support multiprocess `append` write at the same time.
 
 ## Usage
 
