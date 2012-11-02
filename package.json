@@ -30,6 +30,7 @@
   "devDependencies": {
     "mocha": "*",
     "mkdirp": "*",
+    "jscover": "*",
     "should": "*"
   },
   "license": "MIT"
