@@ -1,4 +1,4 @@
-logfilestream [![Build Status](https://secure.travis-ci.org/fengmk2/logstream.png)](http://travis-ci.org/fengmk2/logstream)
+logfilestream [![Build Status](https://secure.travis-ci.org/fengmk2/logstream.png)](http://travis-ci.org/fengmk2/logstream) [![Coverage Status](https://coveralls.io/repos/fengmk2/logstream/badge.png)](https://coveralls.io/r/fengmk2/logstream)
 =========
 
 ![logo](https://raw.github.com/fengmk2/logstream/master/logo.png)
@@ -28,7 +28,7 @@ $ npm install logfilestream
 
 (The MIT License)
 
-Copyright (c) 2012 fengmk2 <fengmk2@gmail.com>.
+Copyright (c) 2012 - 2013 fengmk2 <fengmk2@gmail.com>.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

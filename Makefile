@@ -1,24 +1,29 @@
 TESTS = test/*.test.js
 REPORTER = spec
 TIMEOUT = 2000
-JSCOVERAGE = ./node_modules/jscover/bin/jscover
-MOCHA = ./node_modules/mocha/bin/mocha
+MOCHA_OPTS =
 
 install:
 	@npm install
 
 test: install
-	@NODE_ENV=test $(MOCHA) \
+	@NODE_ENV=test ./node_modules/mocha/bin/mocha \
 		--reporter $(REPORTER) \
 		--timeout $(TIMEOUT) \
+		$(MOCHA_OPTS) \
 		$(TESTS)
 
-test-cov: install lib-cov
-	@LOGSTREAM_COV=1 $(MAKE) test REPORTER=dot
-	@LOGSTREAM_COV=1 $(MAKE) test REPORTER=html-cov > coverage.html
+test-cov:
+	@rm -f coverage.html
+	@$(MAKE) test MOCHA_OPTS='--require blanket' REPORTER=html-cov > coverage.html
+	@$(MAKE) test MOCHA_OPTS='--require blanket' REPORTER=travis-cov
+	@ls -lh coverage.html
 
-lib-cov:
-	@rm -rf ./lib-cov
-	@$(JSCOVERAGE) lib $@
+test-coveralls:
+	@$(MAKE) test
+	@echo TRAVIS_JOB_ID $(TRAVIS_JOB_ID)
+	@$(MAKE) test MOCHA_OPTS='--require blanket' REPORTER=mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
 
-.PHONY: test-cov test lib-cov
+test-all: test test-cov
+
+.PHONY: test test-cov test-all test-coveralls
