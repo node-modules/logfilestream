@@ -1,16 +1,29 @@
+/**!
+ * logstream - test/logstream.test.js
+ * 
+ * Copyright(c) 2013 Alibaba Group Holding Limited.
+ * Authors: 
+ *   苏千 <suqian.yf@taobao.com> (http://fengmk2.github.com)
+ */
+
+"use strict";
+
+/**
+ * Module dependencies.
+ */
 
 var should = require('should');
-var logstream = require('../');
 var moment = require('moment');
 var path = require('path');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
 var exec = require('child_process').exec;
 var existsSync = fs.existsSync || path.existsSync;
+var logstream = require('../');
 
 var logdir = path.join(__dirname, 'logstream-test');
 
-describe('lib/logstream.js', function () {
+describe('logstream.test.js', function () {
   before(function (done) {
     exec(['rm -rf ' + logdir], function () {
       mkdirp(logdir, done);
@@ -92,10 +105,10 @@ describe('lib/logstream.js', function () {
         nameformat: 'YYYY-MM-DDhh:mm:ss[.log]',
         logdir: logdir
       });
-      var lastStream = stream.stream;
       var line1 = 'now is ' + new Date() + '|\n';
       stream.write(line1);
       stream.write(line1);
+      var lastStream = stream.stream;
       setTimeout(function () {
         fs.readFileSync(lastStream.path, 'utf8').should.equal(line1 + line1);
         existsSync(stream.stream.path).should.be.true;
@@ -112,7 +125,7 @@ describe('lib/logstream.js', function () {
         stream.end();
         stream.should.have.property('_timer', null);
         stream.should.have.property('stream', null);
-      }, 1010);
+      }, 1500);
     });
   });
 });
