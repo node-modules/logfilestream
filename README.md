@@ -1,9 +1,17 @@
 logfilestream [![Build Status](https://secure.travis-ci.org/fengmk2/logstream.png)](http://travis-ci.org/fengmk2/logstream) [![Coverage Status](https://coveralls.io/repos/fengmk2/logstream/badge.png)](https://coveralls.io/r/fengmk2/logstream)
 =========
 
+[![NPM](https://nodei.co/npm/logfilestream.png?downloads=true&stars=true)](https://nodei.co/npm/logfilestream)
+
 ![logo](https://raw.github.com/fengmk2/logstream/master/logo.png)
 
 Log file stream, including auto rolling feature, support multiprocess `append` write at the same time.
+
+## Install
+
+```sh
+$ npm install logfilestream
+```
 
 ## Usage
 
@@ -18,13 +26,7 @@ writestream.write(' world\n');
 writestream.end();
 ```
 
-### Install
-
-```sh
-$ npm install logfilestream
-```
-
-## License 
+## License
 
 (The MIT License)
 
