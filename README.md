@@ -1,7 +1,7 @@
-logfilestream [![Build Status](https://secure.travis-ci.org/fengmk2/logstream.png)](http://travis-ci.org/fengmk2/logstream) [![Coverage Status](https://coveralls.io/repos/fengmk2/logstream/badge.png)](https://coveralls.io/r/fengmk2/logstream)
+logfilestream [![Build Status](https://secure.travis-ci.org/node-modules/logstream.svg)](http://travis-ci.org/node-modules/logstream) [![Coverage Status](https://coveralls.io/repos/node-modules/logstream/badge.svg)](https://coveralls.io/r/node-modules/logstream)
 =========
 
-[![NPM](https://nodei.co/npm/logfilestream.png?downloads=true&stars=true)](https://nodei.co/npm/logfilestream)
+[![NPM](https://nodei.co/npm/logfilestream.svg?downloads=true&stars=true)](https://nodei.co/npm/logfilestream)
 
 ![logo](https://raw.github.com/fengmk2/logstream/master/logo.png)
 

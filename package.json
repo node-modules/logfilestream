@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/fengmk2/logstream.git"
+    "url": "git://github.com/node-modules/logstream.git"
   },
   "bugs": {
-    "url": "https://github.com/fengmk2/logstream/issues"
+    "url": "https://github.com/node-modules/logstream/issues"
   },
   "keywords": [
     "logfile",
