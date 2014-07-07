@@ -1,8 +1,8 @@
 /**!
  * logstream - test/logstream.test.js
- * 
+ *
  * Copyright(c) 2013 Alibaba Group Holding Limited.
- * Authors: 
+ * Authors:
  *   苏千 <suqian.yf@taobao.com> (http://fengmk2.github.com)
  */
 
@@ -29,7 +29,7 @@ describe('logstream.test.js', function () {
       mkdirp(logdir, done);
     });
   });
-  
+
   describe('createStream()', function () {
     it('should init and call this first cut() to create a writestream', function () {
       var stream = logstream({logdir: logdir});
@@ -43,6 +43,19 @@ describe('logstream.test.js', function () {
       stream.end();
       stream.should.have.property('stream', null);
     });
+
+    it('should init format YYYY/MM/DD/[info.log] ok', function () {
+      var stream = logstream({logdir: logdir, nameformat: 'YYYY/MM/DD/[info.log]'});
+      stream.duration.should.equal(3600000);
+      stream.logdir.should.equal(logdir);
+      stream.nameformat.should.equal('YYYY/MM/DD/[info.log]');
+      stream.streamMode.should.equal('0666');
+      stream.stream.path.should.equal(path.join(logdir,
+        moment().format('YYYY/MM/DD/') + 'info.log'));
+      stream.should.have.property('_reopening', true);
+      stream.end();
+      stream.should.have.property('stream', null);
+    })
   });
 
   describe('firstDuration()', function () {
@@ -64,10 +77,10 @@ describe('logstream.test.js', function () {
         stream.firstDuration().should.equal(60000);
         stream.end();
       });
-      [60000 * 5, 60000 * 10, 60000 * 20, 
-        60000 * 30, 60000 * 59, 
-        3600000 * 1, 3600000 * 2, 3600000 * 3, 
-        3600000 * 5, 3600000 * 12, 3600000 * 24, 
+      [60000 * 5, 60000 * 10, 60000 * 20,
+        60000 * 30, 60000 * 59,
+        3600000 * 1, 3600000 * 2, 3600000 * 3,
+        3600000 * 5, 3600000 * 12, 3600000 * 24,
         3600000 * 24 * 3, 3600000 * 24 * 5, 3600000 * 24 * 7
       ].forEach(function (j) {
         var stream = logstream({ duration: j, logdir: logdir });
