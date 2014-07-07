@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "make test-all",
-    "blanket": { "pattern": "logstream/lib" },
-    "travis-cov": { "threshold": 98 }
+    "blanket": {
+      "pattern": "logstream/lib"
+    },
+    "travis-cov": {
+      "threshold": 98
+    }
   },
   "repository": {
     "type": "git",
@@ -27,16 +31,17 @@
   ],
   "author": "fengmk2 <fengmk2@gmail.com>",
   "dependencies": {
-    "moment": ">=1.7.0"
+    "moment": "~2.7.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "mkdirp": "*",
+    "autod": "^0.2.2",
     "blanket": "*",
-    "travis-cov": "*",
     "coveralls": "*",
+    "mkdirp": "~0.5.0",
+    "mocha": "^1.20.1",
     "mocha-lcov-reporter": "*",
-    "should": "*"
+    "should": "~4.0.4",
+    "travis-cov": "*"
   },
   "license": "MIT"
 }

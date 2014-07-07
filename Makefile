@@ -2,9 +2,10 @@ TESTS = test/*.test.js
 REPORTER = spec
 TIMEOUT = 5000
 MOCHA_OPTS =
+REGISTRY = "--registry=http://registry.npm.taobao.org"
 
 install:
-	@npm install
+	@npm install $(REGISTRY)
 
 test: install
 	@NODE_ENV=test ./node_modules/mocha/bin/mocha \
@@ -26,4 +27,6 @@ test-coveralls:
 
 test-all: test test-cov
 
+autod: install
+	node_modules/.bin/autod -w --prefix="~" $(REGISTRY)
 .PHONY: test test-cov test-all test-coveralls
