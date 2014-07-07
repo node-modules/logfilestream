@@ -26,6 +26,28 @@ writestream.write(' world\n');
 writestream.end();
 ```
 
+## Options
+
+```
+/**
+ * Log stream, auto cut the log file.
+ *
+ * log file name is concat with `prename + format + ext`.
+ *
+ * @param  {Object} options
+ *  - {String} logdir, this dir must exists.
+ *  - {String} nameformat, default is '[info.]YYYY-MM-DD[.log]',
+ *    @see moment().format(): http://momentjs.com/docs/#/displaying/format/
+ *    Also support '{pid}' for process pid.
+ *  - {Number} [duration], default is one houre(24 * 3600000 ms), must >= 60s.
+ *  - {String} [mode], default is '0666'.
+ *  - {Number} [buffer] buffer duration, default is 1000ms
+ *  - {Boolean} [mkdir] try to mkdir in each cut, make sure dir exist.
+ *    useful when your nameformat like 'YYYY/MM/DD/[info.log]'.
+ * return {LogStream}
+ */
+```
+
 ## License
 
 (The MIT License)

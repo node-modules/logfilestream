@@ -45,7 +45,7 @@ describe('logstream.test.js', function () {
     });
 
     it('should init format YYYY/MM/DD/[info.log] ok', function () {
-      var stream = logstream({logdir: logdir, nameformat: 'YYYY/MM/DD/[info.log]'});
+      var stream = logstream({logdir: logdir, nameformat: 'YYYY/MM/DD/[info.log]', mkdir: true});
       stream.duration.should.equal(3600000);
       stream.logdir.should.equal(logdir);
       stream.nameformat.should.equal('YYYY/MM/DD/[info.log]');
