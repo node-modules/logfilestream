@@ -1,10 +1,12 @@
 {
   "name": "logfilestream",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Log file stream, including auto rolling feature, support multiprocess `append` write at the same time. ",
   "main": "index.js",
   "scripts": {
-    "test": "make test-all",
+    "test": "make test-all"
+  },
+  "config": {
     "blanket": {
       "pattern": "logstream/lib"
     },
@@ -12,6 +14,7 @@
       "threshold": 98
     }
   },
+  "homepage": "https://github.com/node-modules/logstream",
   "repository": {
     "type": "git",
     "url": "git://github.com/node-modules/logstream.git"
@@ -35,6 +38,7 @@
     "moment": "~2.7.0"
   },
   "devDependencies": {
+    "contributors": "*",
     "autod": "^0.2.2",
     "blanket": "*",
     "coveralls": "*",

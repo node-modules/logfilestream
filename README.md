@@ -3,7 +3,7 @@ logfilestream [![Build Status](https://secure.travis-ci.org/node-modules/logstre
 
 [![NPM](https://nodei.co/npm/logfilestream.svg?downloads=true&stars=true)](https://nodei.co/npm/logfilestream)
 
-![logo](https://raw.github.com/fengmk2/logstream/master/logo.png)
+![logo](https://raw.github.com/node-modules/logstream/master/logo.png)
 
 Log file stream, including auto rolling feature, support multiprocess `append` write at the same time.
 
@@ -52,7 +52,7 @@ writestream.end();
 
 (The MIT License)
 
-Copyright (c) 2012 - 2013 fengmk2 <fengmk2@gmail.com>.
+Copyright (c) 2012 - 2014 fengmk2 <fengmk2@gmail.com>.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

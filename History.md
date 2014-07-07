@@ -1,4 +1,13 @@
 
+0.1.1 / 2014-07-07
+==================
+
+ * add options.mkdir
+ * use mkdirp to make sure dir exist
+ * use autod
+ * fix typo
+ * add npm image
+
 0.1.0 / 2013-11-08 
 ==================
 
