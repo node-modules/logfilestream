@@ -39,6 +39,7 @@ writestream.end();
  *  - {String} nameformat, default is '[info.]YYYY-MM-DD[.log]',
  *    @see moment().format(): http://momentjs.com/docs/#/displaying/format/
  *    Also support '{pid}' for process pid.
+ *  - {String} [encoding], default is utf-8, other encoding will encode by iconv-lite
  *  - {Number} [duration], default is one houre(24 * 3600000 ms), must >= 60s.
  *  - {String} [mode], default is '0666'.
  *  - {Number} [buffer] buffer duration, default is 1000ms
