@@ -1,4 +1,9 @@
 
+1.0.0 / 2014-09-15
+==================
+
+ * stream.end() should also clear the flush interval. (@threeday0905)
+
 0.1.3 / 2014-07-08
 ==================
 
