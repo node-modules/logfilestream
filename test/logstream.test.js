@@ -146,8 +146,8 @@ describe('logstream.test.js', function () {
     it('will clear timer and flush timer', function() {
       var stream = logstream({logdir: logdir});
 
-      stream.should.have.property('_timer');
-      stream.should.have.property('_flushTimer');
+      stream.should.have.property('_timer').be.a.Object;
+      stream.should.have.property('_flushTimer').be.a.Object;
 
       stream.end();
 
