@@ -141,4 +141,19 @@ describe('logstream.test.js', function () {
       }, 1500);
     });
   });
+
+  describe('end()', function() {
+    it('will clear timer and flush timer', function() {
+      var stream = logstream({logdir: logdir});
+
+      stream.should.have.property('_timer');
+      stream.should.have.property('_flushTimer');
+
+      stream.end();
+
+      stream.should.have.property('_timer', null);
+      stream.should.have.property('_flushTimer', null);
+    });
+
+  });
 });
