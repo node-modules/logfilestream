@@ -1,4 +1,9 @@
 
+1.0.1 / 2014-09-18
+==================
+
+ * since moment().add(period, number) is deprecated from moment 2.8.x. update related code with moment().add(number, period), to avoid warning. (@threeday0905)
+
 1.0.0 / 2014-09-15
 ==================
 

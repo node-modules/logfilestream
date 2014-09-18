@@ -1,6 +1,6 @@
 {
   "name": "logfilestream",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Log file stream, including auto rolling feature, support multiprocess `append` write at the same time. ",
   "main": "index.js",
   "scripts": {
