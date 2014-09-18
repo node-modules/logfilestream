@@ -84,11 +84,11 @@ LogStream.prototype.firstDuration = function () {
   if (this.duration > ONE_MINUTE) {
     var now = moment();
     if (this.duration < ONE_HOUR) { // in minute
-      firstDuration = now.clone().add('ms', this.duration).startOf('minute').diff(now);
+      firstDuration = now.clone().add(this.duration, 'ms').startOf('minute').diff(now);
     } else if (this.duration < ONE_DAY) { // in hour
-      firstDuration = now.clone().add('ms', this.duration).startOf('hour').diff(now);
+      firstDuration = now.clone().add(this.duration, 'ms').startOf('hour').diff(now);
     } else { // in day
-      firstDuration = now.clone().add('ms', this.duration).startOf('day').diff(now);
+      firstDuration = now.clone().add(this.duration, 'ms').startOf('day').diff(now);
     }
   }
   return firstDuration;
