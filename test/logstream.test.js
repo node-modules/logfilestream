@@ -1,16 +1,4 @@
-/**!
- * logstream - test/logstream.test.js
- *
- * Copyright(c) 2013 Alibaba Group Holding Limited.
- * Authors:
- *   苏千 <suqian.yf@taobao.com> (http://fengmk2.github.com)
- */
-
-"use strict";
-
-/**
- * Module dependencies.
- */
+'use strict';
 
 var should = require('should');
 var moment = require('moment');

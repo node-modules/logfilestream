@@ -1,15 +1,4 @@
-/**!
- * logfilestream - index.js
- *
- * Copyright(c) fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)
- * MIT Licensed
- */
-
-"use strict";
-
-/**
- * Module dependencies.
- */
+'use strict';
 
 var fs = require('fs');
 var path = require('path');
@@ -23,7 +12,7 @@ var ONE_MINUTE = 60000;
 var ONE_HOUR = 60 * ONE_MINUTE;
 var ONE_DAY = 24 * ONE_HOUR;
 
-/*!
+/**
  * Default log buffer duration.
  */
 var defaultBufferDuration = 1000;
