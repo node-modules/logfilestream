@@ -61,7 +61,6 @@ function LogStream(options) {
   this.mkdir = options.mkdir;
   this.cut();
   this.startTimer(this.firstDuration());
-  this._buf = [];
   this._flushInterval = options.buffer || defaultBufferDuration;
   this._flushTimer = setInterval(this._flush.bind(this), this._flushInterval);
 }
@@ -111,6 +110,7 @@ LogStream.prototype.cut = function () {
 
   this._reopening = true;
   this.stream = fs.createWriteStream(logpath, {flags: 'a', mode: this.streamMode});
+  this.stream.cork();
   this.stream
     .on("error", this.emit.bind(this, "error"))
     .on("pipe", this.emit.bind(this, "pipe"))
@@ -126,16 +126,13 @@ LogStream.prototype.cut = function () {
 };
 
 LogStream.prototype.write = function (string) {
-  this._buf.push(string);
+  this.stream.write(this._encode(string));
 };
 
 LogStream.prototype.flush =
 LogStream.prototype._flush = function () {
-  if (this._buf.length) {
-    var buf = this._encode(this._buf.join(''));
-    this.stream.write(buf);
-    this._buf.length = 0;
-  }
+  this.stream.uncork();
+  this.stream.cork();
 };
 
 LogStream.prototype._encode = function (string) {
