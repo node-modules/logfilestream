@@ -1,6 +1,6 @@
 {
   "name": "logfilestream",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Log file stream, including auto rolling feature, support multiprocess `append` write at the same time. ",
   "main": "index.js",
   "files": [
@@ -49,7 +49,10 @@
     "should": "4"
   },
   "ci": {
-    "version": "4, 6"
+    "version": "4, 6, 7"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   },
   "license": "MIT"
 }
