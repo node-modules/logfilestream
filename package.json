@@ -38,7 +38,7 @@
   "author": "fengmk2 <fengmk2@gmail.com>",
   "dependencies": {
     "iconv-lite": "^0.4.13",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.0",
     "moment": "^2.11.2"
   },
   "devDependencies": {
